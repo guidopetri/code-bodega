@@ -105,13 +105,14 @@ if __name__ == '__main__':
             sprite_sheet.append(sprite_surf)
 
     while True:
-        
+
         surface.fill(pygame.Color(255, 255, 255))
 
         for i, sprite in enumerate(sprite_sheet):
+            loc = sprite.get_rect(topleft=((size * i) % width,
+                                           size * (i // (height // size))))
             surface.blit(sprite,
-                         sprite.get_rect(topleft=((size * i) % width,
-                                                   size * (i // (height // size))))
+                         loc
                          )
 
         for event in pygame.event.get():
