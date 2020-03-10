@@ -111,9 +111,7 @@ if __name__ == '__main__':
         for i, sprite in enumerate(sprite_sheet):
             loc = sprite.get_rect(topleft=((size * i) % width,
                                            size * (i // (height // size))))
-            surface.blit(sprite,
-                         loc
-                         )
+            surface.blit(sprite, loc)
 
         for event in pygame.event.get():
             if (event.type == pygame.QUIT or
